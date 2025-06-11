@@ -1,75 +1,102 @@
-// Form Handling
-const form = document.getElementById('bookingForm');
-const steps = form.querySelectorAll('.step');
-const progress = document.querySelector('.progress');
-let currentStep = 1;
+// Replace with your actual Gmail address
+const YOUR_EMAIL = 'excellencesammy@gmail.com';
 
-function showStep(step) {
-    steps.forEach(s => s.classList.remove('active'));
-    steps[step - 1].classList.add('active');
-    progress.style.width = `${((step - 1) / (steps.length - 1)) * 100}%`;
+// Update the email input field with your actual email
+document.addEventListener('DOMContentLoaded', function() {
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) {
+        emailInput.value = YOUR_EMAIL;
+    }
+    
+    // Show loading overlay initially, then hide after 2 seconds
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    
+    setTimeout(() => {
+        loadingOverlay.classList.add('hidden');
+        // Remove from DOM after transition
+        setTimeout(() => {
+            loadingOverlay.style.display = 'none';
+        }, 500);
+    }, 2000);
+});
+
+// Copy email function
+function copyEmail() {
+    const emailInput = document.getElementById('emailInput');
+    const copyFeedback = document.getElementById('copyFeedback');
+    
+    // Select and copy the email
+    emailInput.select();
+    emailInput.setSelectionRange(0, 99999); // For mobile devices
+    
+    try {
+        document.execCommand('copy');
+        
+        // Show feedback
+        copyFeedback.classList.add('show');
+        
+        // Hide feedback after 2 seconds
+        setTimeout(() => {
+            copyFeedback.classList.remove('show');
+        }, 2000);
+        
+    } catch (err) {
+        console.error('Failed to copy email: ', err);
+    }
+    
+    // Deselect the input
+    window.getSelection().removeAllRanges();
 }
 
-form.addEventListener('click', (e) => {
-    if (e.target.classList.contains('next-btn') && form.checkValidity()) {
-        currentStep++;
-        showStep(currentStep);
-    } else if (e.target.classList.contains('prev-btn')) {
-        currentStep--;
-        showStep(currentStep);
-    }
-});
+// Book service function
+function bookService() {
+    // Create email subject and body
+    const subject = 'Travel Booking Request - Excellence Travel Solutions Africa';
+    const body = `Hello Excellence Travel Solutions Africa,
 
-form.addEventListener('input', () => {
-    if (currentStep === 3) {
-        const travelers = form.travelers.value;
-        const service = form.service.value;
-        const price = calculatePrice(service, travelers);
-        document.getElementById('priceQuote').textContent = `Estimated Price: KSH ${price}`;
-    }
-});
+I would like to make a travel booking inquiry.
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const service = form.service.value;
-    const date = form.date.value;
-    const pickup = form.pickup.value;
-    const dropoff = form.dropoff.value;
-    const travelers = form.travelers.value;
-    const price = calculatePrice(service, travelers);
+Please contact me with available packages, dates, and pricing information.
 
-    const body = `Service: ${service}\nDate: ${date}\nPickup: ${pickup}\nDropoff: ${dropoff}\nTravelers: ${travelers}\nEstimated Price: KSH ${price}`;
+Thank you for your service!
+
+Best regards`;
+    
+    // Encode the subject and body for URL
+    const encodedSubject = encodeURIComponent(subject);
     const encodedBody = encodeURIComponent(body);
-    const gmailUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&to=sblgivan@gmail.com&su=New%20Booking&body=${encodedBody}`;
-
-    window.location.href = gmailUrl;
-});
-
-// Price Calculation
-function calculatePrice(service, travelers) {
-    const baseRates = {
-        'hotel-transfers': 1000,
-        'airport-sgr-transfers': 1500
-        // Add more services as needed
-    };
-    return (baseRates[service] || 1000) * travelers;
+    
+    // Create Gmail compose URL
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${YOUR_EMAIL}&su=${encodedSubject}&body=${encodedBody}`;
+    
+    // Open Gmail in a new tab
+    window.open(gmailURL, '_blank');
 }
 
-// Geolocation (optional)
-navigator.geolocation.getCurrentPosition(position => {
-    document.getElementById('pickup').value = `${position.coords.latitude}, ${position.coords.longitude}`;
-}, () => {
-    document.getElementById('pickup').placeholder = "Geolocation unavailable, enter manually";
-});
+// Alternative copy function using modern Clipboard API (fallback)
+async function copyEmailModern() {
+    const emailInput = document.getElementById('emailInput');
+    const copyFeedback = document.getElementById('copyFeedback');
+    
+    try {
+        await navigator.clipboard.writeText(YOUR_EMAIL);
+        
+        // Show feedback
+        copyFeedback.classList.add('show');
+        
+        // Hide feedback after 2 seconds
+        setTimeout(() => {
+            copyFeedback.classList.remove('show');
+        }, 2000);
+        
+    } catch (err) {
+        // Fallback to older method
+        copyEmail();
+    }
+}
 
-// Scroll Animation
-const fadeIns = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.2 });
-
-fadeIns.forEach(fadeIn => observer.observe(fadeIn));
+// Check if modern clipboard API is available and use it
+if (navigator.clipboard && window.isSecureContext) {
+    // Override the copyEmail function with modern version
+    window.copyEmail = copyEmailModern;
+}
