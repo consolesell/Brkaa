@@ -1,0 +1,20 @@
+{
+    "name": "EXCELLENCE TRAVEL SOLUTIONS AFRICA",
+    "short_name": "Excellence Travel",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ff9800",
+    "icons": [
+        {
+            "src": "public/services/logos/logo1.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "public/services/logos/logo2.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

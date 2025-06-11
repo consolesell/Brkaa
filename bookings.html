@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - EXCELLENCE TRAVEL SOLUTIONS AFRICA</title>
+    <link rel="stylesheet" href="bookings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="logo">
+            <img src="public/services/logos/logo.png" alt="Logo" class="logo-img">
+            <span>EXCELLENCE TRAVEL SOLUTIONS AFRICA</span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="/homepage.html">Home</a></li>
+                <li><a href="/bookings.html">Book Now</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">☰</div>
+    </header>
+
+    <!-- Booking Form -->
+    <section class="booking-form fade-in">
+        <h1>Book Your Trip</h1>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <form id="bookingForm">
+            <div class="step active" data-step="1">
+                <label>
+                    Service:
+                    <select name="service" required>
+                        <option value="hotel-transfers">Hotel Transfers</option>
+                        <option value="airport-sgr-transfers">Airport & SGR Transfers</option>
+                        <!-- Add more services as needed -->
+                    </select>
+                </label>
+                <label>
+                    Date:
+                    <input type="date" name="date" required>
+                </label>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="step" data-step="2">
+                <label>
+                    Pickup Location:
+                    <input type="text" name="pickup" id="pickup" required placeholder="Enter or use geolocation">
+                </label>
+                <label>
+                    Drop-off Location:
+                    <input type="text" name="dropoff" required>
+                </label>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="button" class="next-btn">Next</button>
+            </div>
+            <div class="step" data-step="3">
+                <label>
+                    Number of Travelers:
+                    <input type="number" name="travelers" min="1" required>
+                </label>
+                <div id="priceQuote" class="fade-in"></div>
+                <button type="button" class="prev-btn">Previous</button>
+                <button type="submit" class="submit-btn">Submit Booking</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: +254 728 883 988 | +254 759 881 087 | +254 788 115 252</p>
+        <p>Email: <a href="mailto:sblgivan@gmail.com">sblgivan@gmail.com</a></p>
+        <p>© 2023 EXCELLENCE TRAVEL SOLUTIONS AFRICA</p>
+    </footer>
+
+    <script src="bookings.js"></script>
+</body>
+</html>

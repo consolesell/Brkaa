@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCELLENCE TRAVEL SOLUTIONS AFRICA</title>
+    <link rel="stylesheet" href="homepagestyles.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner-wheel"></div>
+            <p>loading...</p>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="logo">
+            <img src="public/services/logos/logo.png" alt="Logo" class="logo-img">
+            <span>EXCELLENCE TRAVEL SOLUTIONS AFRICA</span>
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="bookings.html">Book Now</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">☰</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="fade-in">Premium Car Booking Experience</h1>
+        <p class="fade-in">Explore Africa with Comfort and Style</p>
+        <a href="bookings.html" class="cta-button pulse">Book Now</a>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="fade-in">Our Services</h2>
+        <div class="services-grid">
+            <!-- Hotel Transfers -->
+            <div class="service-card fade-in" data-service="hotel-transfers">
+                <div class="image-drawer">
+                    <img src="public/services/service/hoteltransfers/hotel1.jpg" alt="Hotel Transfers" class="active">
+                    <img src="public/services/service/hoteltransfers/hotel2.jpg" alt="Hotel Transfers">
+                </div>
+                <h3>Hotel Transfers</h3>
+                <p>Seamless transfers to your hotel.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Airport/SGR Transfers -->
+            <div class="service-card fade-in" data-service="airport-sgr-transfers">
+                <div class="image-drawer">
+                    <img src="public/services/service/airport_sgr/image1.jpg" alt="Airport Transfers" class="active">
+                    <img src="public/services/service/airport_sgr/image2.jpg" alt="Airport Transfers">
+                </div>
+                <h3>Airport & SGR Transfers</h3>
+                <p>Reliable airport and train station pickups.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Mombasa Old Town/Fort Jesus Tours -->
+            <div class="service-card fade-in" data-service="mombasa-tours">
+                <div class="image-drawer">
+                    <img src="public/services/service/mombasa_tours/image1.jpg" alt="Mombasa Tours" class="active">
+                    <img src="public/services/service/mombasa_tours/image2.jpg" alt="Mombasa Tours">
+                </div>
+                <h3>Mombasa Old Town/Fort Jesus Tours</h3>
+                <p>Explore the rich history of Mombasa.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Marafa Hell's Kitchen Excursion -->
+            <div class="service-card fade-in" data-service="marafa-excursion">
+                <div class="image-drawer">
+                    <img src="public/services/service/marafa_excursion/image1.jpg" alt="Marafa Excursion" class="active">
+                    <img src="public/services/service/marafa_excursion/image2.jpg" alt="Marafa Excursion">
+                </div>
+                <h3>Marafa Hell's Kitchen Excursion</h3>
+                <p>Discover the stunning landscapes of Marafa.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Wasini Dolphins Tour -->
+            <div class="service-card fade-in" data-service="wasini-dolphins">
+                <div class="image-drawer">
+                    <img src="public/services/service/wasini_dolphins/image1.jpg" alt="Wasini Dolphins" class="active">
+                    <img src="public/services/service/wasini_dolphins/image2.jpg" alt="Wasini Dolphins">
+                </div>
+                <h3>Wasini Dolphins Tour</h3>
+                <p>Experience the beauty of marine life.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Shimba Hills National Reserve -->
+            <div class="service-card fade-in" data-service="shimba-hills">
+                <div class="image-drawer">
+                    <img src="public/services/service/shimba_hills/image1.jpg" alt="Shimba Hills" class="active">
+                    <img src="public/services/service/shimba_hills/image2.jpg" alt="Shimba Hills">
+                </div>
+                <h3>Shimba Hills National Reserve</h3>
+                <p>Explore the diverse wildlife of Shimba Hills.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Bora Bora Wildlife Sanctuary -->
+            <div class="service-card fade-in" data-service="bora-bora">
+                <div class="image-drawer">
+                    <img src="public/services/service/bora_bora/image1.jpg" alt="Bora Bora" class="active">
+                    <img src="public/services/service/bora_bora/image2.jpg" alt="Bora Bora">
+                </div>
+                <h3>Bora Bora Wildlife Sanctuary</h3>
+                <p>Discover the sanctuary's unique ecosystem.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Tsavo East/West Park Safaris -->
+            <div class="service-card fade-in" data-service="tsavo-safaris">
+                <div class="image-drawer">
+                    <img src="public/services/service/tsavo_safaris/image1.jpg" alt="Tsavo Safaris" class="active">
+                    <img src="public/services/service/tsavo_safaris/image2.jpg" alt="Tsavo Safaris">
+                </div>
+                <h3>Tsavo East/West Park Safaris</h3>
+                <p>Experience the thrill of a safari in Tsavo.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Amboseli Safari -->
+            <div class="service-card fade-in" data-service="amboseli-safari">
+                <div class="image-drawer">
+                    <img src="public/services/service/amboseli_safari/image1.jpg" alt="Amboseli Safari" class="active">
+                    <img src="public/services/service/amboseli_safari/image2.jpg" alt="Amboseli Safari">
+                </div>
+                <h3>Amboseli Safari</h3>
+                <p>Witness the majestic elephants of Amboseli.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Masai Mara Safari -->
+            <div class="service-card fade-in" data-service="masai-mara-safari">
+                <div class="image-drawer">
+                    <img src="public/services/service/masai_mara_safari/image1.jpg" alt="Masai Mara Safari" class="active">
+                    <img src="public/services/service/masai_mara_safari/image2.jpg" alt="Masai Mara Safari">
+                </div>
+                <h3>Masai Mara Safari</h3>
+                <p>Explore the iconic Masai Mara reserve.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- Car Hire, Self Drive, and Chauffeur Driven -->
+            <div class="service-card fade-in" data-service="car-hire">
+                <div class="image-drawer">
+                    <img src="public/services/service/car_hire/image1.jpg" alt="Car Hire" class="active">
+                    <img src="public/services/service/car_hire/image2.jpg" alt="Car Hire">
+                </div>
+                <h3>Car Hire, Self Drive, and Chauffeur Driven</h3>
+                <p>Flexible car rental options for your needs.</p>
+                <div class="rating">★★★★☆</div>
+            </div>
+
+            <!-- EXECUTIVE TRANSFERS (V.I.P) -->
+            <div class="service-card fade-in" data-service="executive-transfers">
+                <div class="image-drawer">
+                    <img src="public/services/service/executive_transfers/image1.jpg" alt="Executive Transfers" class="active">
+                    <img src="public/services/service/executive_transfers/image2.jpg" alt="Executive Transfers">
+                </div>
+                <h3>EXECUTIVE TRANSFERS (V.I.P)</h3>
+                <p>Luxury transfers for discerning travelers.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+
+            <!-- LONG DISTANCE HIRE (V.I.P) -->
+            <div class="service-card fade-in" data-service="long-distance-hire">
+                <div class="image-drawer">
+                    <img src="public/services/service/long_distance_hire/image1.jpg" alt="Long Distance Hire" class="active">
+                    <img src="public/services/service/long_distance_hire/image2.jpg" alt="Long Distance Hire">
+                </div>
+                <h3>LONG DISTANCE HIRE (V.I.P)</h3>
+                <p>Comfortable long-distance travel solutions.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+
+            <!-- GROUP OR COOPERATE TRANSFERS (V.I.P) -->
+            <div class="service-card fade-in" data-service="group-transfers">
+                <div class="image-drawer">
+                    <img src="public/services/service/group_transfers/image1.jpg" alt="Group Transfers" class="active">
+                    <img src="public/services/service/group_transfers/image2.jpg" alt="Group Transfers">
+                </div>
+                <h3>GROUP OR COOPERATE TRANSFERS (V.I.P)</h3>
+                <p>Efficient transfers for groups and corporate clients.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+
+            <!-- International Yearly Pilgrimage Transfers (V.I.P) -->
+            <div class="service-card fade-in" data-service="pilgrimage-transfers">
+                <div class="image-drawer">
+                    <img src="public/services/service/pilgrimage_transfers/image1.jpg" alt="Pilgrimage Transfers" class="active">
+                    <img src="public/services/service/pilgrimage_transfers/image2.jpg" alt="Pilgrimage Transfers">
+                </div>
+                <h3>International Yearly Pilgrimage Transfers (V.I.P)</h3>
+                <p>Specialized transfers for pilgrimage journeys.</p>
+                <div class="rating">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: +254728883988 | +254759881087 | +254788115252</p>
+        <p>Email: <a href="mailto:sblgivan@gmail.com">sblgivan@gmail.com</a></p>
+        <p>© 2023 EXCELLENCE TRAVEL SOLUTIONS AFRICA</p>
+    </footer>
+
+    <script src="homepagescript.js"></script>
+</body>
+</html>
